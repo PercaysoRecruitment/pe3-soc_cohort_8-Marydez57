@@ -2,6 +2,8 @@
 
 ## Brief
 
+[published link here] https://main.d3sxx31mawxksu.amplifyapp.com/
+
 Create a website that gets news from the GNews api:
 
     https://gnews.io/?ref=apilist.fun
