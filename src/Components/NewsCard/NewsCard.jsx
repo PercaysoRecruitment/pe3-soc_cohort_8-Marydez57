@@ -3,7 +3,7 @@ import useStyles from './styles'
 import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from '@mui/material';
 
 
-const NewsCard = ({ article: { description, publishedAt, content, source, title, url, urlToImage }, i, activeArticle }) => {
+const NewsCard = ({ article: { description, publishedAt, content, source, title, url, image }, i, activeArticle }) => {
     
     const [elRefs, setElRefs] = useState([]);
     const classes = useStyles()
@@ -30,7 +30,7 @@ const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50); //to 
     return (
         <Card ref={elRefs[i]} className={ activeArticle === i ? classes.activeCard : classes.card}>
             <CardActionArea href={url} target='_blank'>
-                <CardMedia className={classes.media} image ={urlToImage || 'https://www.arcenergyinstitute.com/wp-content/uploads/ARC-Energy-Institute-In-the-News.png' } title={title} />
+                <CardMedia className={classes.media} image ={image  } title={title} />
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary" component="h2">{ (new Date(publishedAt)).toDateString()}</Typography>
                     <Typography variant="body2" color="textSecondary" component="h2">{ source.name}</Typography>
